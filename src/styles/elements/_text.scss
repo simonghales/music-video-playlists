@@ -1,0 +1,38 @@
+@import "styles/settings/colors";
+
+body
+{
+  color:       $color-text;
+  font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+textarea,
+a
+{
+  font: inherit;
+}
+
+a
+{
+  color:           inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+  font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}

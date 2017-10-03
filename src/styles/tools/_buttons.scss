@@ -1,0 +1,200 @@
+@import "../../styles/settings/colors";
+
+@mixin resetButton
+{
+  border:     0;
+  background: none;
+  font:       inherit;
+  color:      inherit;
+  padding:    0;
+  cursor:     pointer;
+
+  &:focus
+  {
+    outline: none;
+  }
+}
+
+@mixin placeholder
+{
+  &::-webkit-input-placeholder
+  {
+    @content
+  }
+  &:-moz-placeholder
+  {
+    @content
+  }
+  &::-moz-placeholder
+  {
+    @content
+  }
+  &:-ms-input-placeholder
+  {
+    @content
+  }
+}
+
+@mixin actionButton
+{
+  @include resetButton;
+  color:          $color-action;
+  font-size:      18px;
+  padding:        24px 50px;
+  border-radius:  60px;
+  text-transform: uppercase;
+  font-weight:    700;
+  letter-spacing: 1px;
+  position:       relative;
+
+  &:hover
+  {
+
+    &::before
+    {
+      background-color: #f3f0fb;
+      transform:        translate(-5px, -5px);
+    }
+
+  }
+
+  &:active
+  {
+
+    &::before
+    {
+      background-color: #f3e5f9;
+      transform:        translate(0, 0);
+    }
+
+  }
+
+  &::before
+  {
+    content:          '';
+    //background-color: #f8edfc;
+    background-color: #FFFFFF;
+    position:         absolute;
+    top:              0;
+    left:             0;
+    right:            0;
+    bottom:           0;
+    border-radius:    60px;
+    transform:        translate(8px, 8px);
+    transition:       transform 500ms ease, background 500ms ease;
+    box-shadow:       1px 1px 7px rgba(59, 160, 232, 0.05);
+  }
+
+  &::after
+  {
+    border:        2px solid $color-action;
+    content:       '';
+    position:      absolute;
+    top:           0;
+    left:          0;
+    right:         0;
+    bottom:        0;
+    border-radius: 60px;
+  }
+
+}
+
+@mixin searchButton
+{
+  @include resetButton;
+  color:          $color-action;
+  font-size:      18px;
+  padding:        24px 50px;
+  border-radius:  60px;
+  text-transform: uppercase;
+  font-weight:    700;
+  letter-spacing: 1px;
+  position:       relative;
+  height:         66px;
+
+  input
+  {
+    display:        block;
+    width:          100%;
+    position:       absolute;
+    top:            0;
+    left:           0;
+    right:          0;
+    bottom:         0;
+    border-radius:  60px;
+    padding:        24px 50px;
+    border:         2px solid $color-action;
+    background:     none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color:          $color-action;
+
+    @include placeholder
+    {
+      color: transparentize($color-action, 0.5);
+    }
+
+    &:focus
+    {
+      outline: none;
+
+      @include placeholder
+      {
+        color: $color-action;
+      }
+
+    }
+
+  }
+
+  &::before
+  {
+    content:          '';
+    position:         absolute;
+    top:              0;
+    left:             0;
+    right:            0;
+    bottom:           0;
+    border-radius:    60px;
+    transform:        translate(8px, 8px);
+    background-color: #FFFFFF;
+    transition:       transform 500ms ease, background 500ms ease;
+    box-shadow:       1px 1px 7px rgba(59, 160, 232, 0.05);
+    pointer-events:   none;
+  }
+
+  &:hover
+  {
+
+    &::before
+    {
+      background-color: #f3f0fb;
+      transform:        translate(-5px, -5px);
+    }
+
+  }
+
+  &:active,
+  &:focus
+  {
+
+    &::before
+    {
+      background-color: #f3e5f9;
+      transform:        translate(0, 0);
+    }
+
+  }
+
+}
+
+@mixin searchButtonFocused
+{
+
+  &::before
+  {
+    background-color: #f3e5f9;
+    transform:        translate(0, 0);
+  }
+
+}

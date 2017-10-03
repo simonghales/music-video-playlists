@@ -1,0 +1,23 @@
+.Infographic
+{
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  width:           75vw;
+  height:          33vh;
+}
+
+.Infographic__side
+{
+
+  &:first-of-type
+  {
+    padding-bottom: 150px;
+  }
+
+  &:last-of-type
+  {
+    padding-top: 150px;
+  }
+
+}

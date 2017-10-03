@@ -1,0 +1,37 @@
+@import "../../styles/tools/buttons";
+@import "../../styles/tools/typography";
+
+.PlaylistsScreen
+{
+}
+
+.PlaylistsScreen__content
+{
+  width:  50vw;
+  margin: 100px auto;
+}
+
+.PlaylistsScreen__header
+{
+}
+
+.PlaylistsScreen__searchWrapper
+{
+  @include searchButton;
+  width:    400px;
+  margin:   0 auto;
+  position: fixed;
+  top:      100px;
+  left:     0;
+  right:    0;
+
+  &.PlaylistsScreen__searchWrapper--focused
+  {
+    @include searchButtonFocused;
+  }
+
+}
+
+.PlaylistsScreen__search
+{
+}
