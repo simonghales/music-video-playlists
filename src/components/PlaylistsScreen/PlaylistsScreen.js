@@ -1,58 +1,43 @@
 import React, {Component} from 'react';
-import {
-  Link
-} from 'react-router-dom';
 import classNames from 'classnames';
 import './PlaylistsScreen.css';
-import Playlists from '../Playlists/Playlists';
+import PlaylistsFilterSection from '../PlaylistsFilterSection/PlaylistsFilterSection';
+import PlaylistView from '../PlaylistView/PlaylistView';
 
 class PlaylistsScreen extends Component {
 
   state: {
-    searchFocused: boolean,
+    playlistSelected: boolean,
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      searchFocused: false
+      playlistSelected: false,
     };
-    this.handleSearchFocused = this.handleSearchFocused.bind(this);
-    this.handleSearchUnfocused = this.handleSearchUnfocused.bind(this);
+    this.setPlaylistSelected = this.setPlaylistSelected.bind(this);
   }
 
-  handleSearchFocused() {
+  setPlaylistSelected() {
     this.setState({
-      searchFocused: true
-    });
-  }
-
-  handleSearchUnfocused() {
-    this.setState({
-      searchFocused: false
-    });
+      playlistSelected: !this.state.playlistSelected,
+    })
   }
 
   render() {
-    const {searchFocused} = this.state;
+    const {playlistSelected} = this.state;
     return (
-      <div className='PlaylistsScreen'>
+      <div className={classNames([
+        'PlaylistsScreen',
+        {
+          'PlaylistsScreen--playlistSelected': playlistSelected,
+        }
+      ])}>
         <div className='PlaylistsScreen__content'>
-          <header className='PlaylistsScreen__header'>
-            <div className={classNames([
-              'PlaylistsScreen__searchWrapper',
-              {
-                'PlaylistsScreen__searchWrapper--focused': searchFocused
-              }
-            ])}>
-              <input type='text' placeholder='search playlists' className='PlaylistsScreen__search'
-                     onFocus={this.handleSearchFocused} onBlur={this.handleSearchUnfocused}/>
-            </div>
-          </header>
-          <Playlists/>
-          <Link to={`/`}>
-            <a>home</a>
-          </Link>
+          <PlaylistsFilterSection setPlaylistSelected={this.setPlaylistSelected}/>
+          <div className='PlaylistsScreen__playlistViewWrapper'>
+            <PlaylistView/>
+          </div>
         </div>
       </div>
     );

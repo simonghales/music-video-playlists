@@ -1,0 +1,59 @@
+@import "../../styles/tools/buttons";
+@import "../../styles/groups/playlists";
+@import "../../styles/groups/playlistPreview";
+
+.PlaylistView
+{
+  transition: opacity 750ms ease;
+  opacity:    0;
+  height:     100%;
+
+  @include playlistScreenPlaylistSelected
+  {
+    opacity: 1;
+  }
+
+}
+
+.PlaylistView__header
+{
+  @include playlistPreviewBase;
+}
+
+.PlaylistView__thumb
+{
+  @include playlistPreviewThumb;
+}
+
+.PlaylistView__info
+{
+  @include playlistPreviewInfo;
+  flex: 1;
+}
+
+.PlaylistView__generateWrapper
+{
+
+}
+
+.PlaylistView__generate
+{
+  @include actionButton;
+  top: 30px; // not sure why this is required
+
+  span
+  {
+    position: relative;
+  }
+
+}
+
+.PlaylistView__name
+{
+  @include playlistPreviewName;
+}
+
+.PlaylistView__details
+{
+  @include playlistPreviewDetails;
+}

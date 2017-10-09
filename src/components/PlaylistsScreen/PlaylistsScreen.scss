@@ -1,5 +1,6 @@
 @import "../../styles/tools/buttons";
 @import "../../styles/tools/typography";
+@import "../../styles/groups/playlists";
 
 .PlaylistsScreen
 {
@@ -7,31 +8,14 @@
 
 .PlaylistsScreen__content
 {
-  width:  50vw;
-  margin: 100px auto;
 }
 
-.PlaylistsScreen__header
+.PlaylistsScreen__playlistViewWrapper
 {
-}
-
-.PlaylistsScreen__searchWrapper
-{
-  @include searchButton;
-  width:    400px;
-  margin:   0 auto;
   position: fixed;
-  top:      100px;
-  left:     0;
-  right:    0;
-
-  &.PlaylistsScreen__searchWrapper--focused
-  {
-    @include searchButtonFocused;
-  }
-
-}
-
-.PlaylistsScreen__search
-{
+  top:      94px;
+  left:     calc(50% - (#{$playlistFilterSectionWidth} / 2) + 50px);
+  right:    100px;
+  bottom:   94px;
+  z-index:  50;
 }

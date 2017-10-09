@@ -4,9 +4,14 @@ import './PlaylistPreview.css';
 
 class PlaylistPreview extends Component {
 
+  props: {
+    setPlaylistSelected(): void,
+  };
+
   render() {
+    const {setPlaylistSelected} = this.props;
     return (
-      <div className='PlaylistPreview'>
+      <div className='PlaylistPreview' onClick={setPlaylistSelected}>
         <div className='PlaylistPreview__thumb'></div>
         <div className='PlaylistPreview__info'>
           <div className='PlaylistPreview__name'>Playlist Name</div>

@@ -1,0 +1,60 @@
+@import "../../styles/tools/buttons";
+@import "../../styles/tools/typography";
+@import "../../styles/groups/playlists";
+
+$PlaylistsFilterSectionWidth: $playlistFilterSectionWidth;
+
+@mixin moveLeftOnPlaylistSelected
+{
+  transition: transform 550ms ease-in-out, opacity 550ms ease-in-out;
+
+  @include playlistScreenPlaylistSelected
+  {
+    transform: translateX(calc((((100vw - 440px) / 2) * -1) + 50px));
+  }
+}
+
+.PlaylistsFilterSection
+{
+  width:  $PlaylistsFilterSectionWidth;
+  margin: 100px auto;
+
+  .Playlists
+  {
+    @include moveLeftOnPlaylistSelected;
+
+    @include playlistScreenPlaylistSelected
+    {
+      transform: translateX(calc((((100vw - 440px) / 2) * -1) + 100px));
+    }
+
+  }
+
+}
+
+.PlaylistsFilterSection__header
+{
+  width:    $PlaylistsFilterSectionWidth + 20px;
+  margin:   0 auto;
+  position: fixed;
+  top:      100px;
+  left:     0;
+  right:    0;
+  z-index:  100;
+}
+
+.PlaylistsFilterSection__searchWrapper
+{
+  @include moveLeftOnPlaylistSelected;
+  @include searchButton;
+
+  &.PlaylistsFilterSection__searchWrapper--focused
+  {
+    @include searchButtonFocused;
+  }
+
+}
+
+.PlaylistsFilterSection__search
+{
+}

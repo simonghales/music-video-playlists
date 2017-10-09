@@ -1,37 +1,50 @@
 @import "../../styles/tools/buttons";
 @import "../../styles/tools/typography";
+@import "../../styles/groups/playlistPreview";
 
 .PlaylistPreview
 {
-  display: flex;
-  margin:  10px 0;
+  @include playlistPreviewBase;
+  margin:     10px 0;
+  transition: transform 400ms ease;
+
+  &:active
+  {
+    transform: translateY(2px);
+  }
+
 }
 
 .PlaylistPreview__thumb
 {
-  width:            80px;
-  height:           80px;
-  background-color: rgba(0, 0, 0, 0.1);
+  @include playlistPreviewThumb;
+  transition:       transform 400ms ease;
+
+  .PlaylistPreview:hover &
+  {
+    transform: scale(1.1);
+  }
+
 }
 
 .PlaylistPreview__info
 {
-  margin-left:     10px;
-  display:         flex;
-  flex-direction:  column;
-  justify-content: center;
+  @include playlistPreviewInfo;
+  transition:      transform 400ms ease;
+
+  .PlaylistPreview:hover &
+  {
+    transform: translateX(5px);
+  }
+
 }
 
 .PlaylistPreview__name
 {
-  font-size:      24px;
-  font-weight:    700;
-  letter-spacing: 0.25px;
+  @include playlistPreviewName;
 }
 
 .PlaylistPreview__details
 {
-  font-size:   14px;
-  line-height: 15px;
-  margin-top:  10px;
+  @include playlistPreviewDetails;
 }

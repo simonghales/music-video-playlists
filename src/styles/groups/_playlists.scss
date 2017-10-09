@@ -1,0 +1,18 @@
+@mixin playlistScreenPlaylistSelected($parent: true)
+{
+  @if $parent
+  {
+    .PlaylistsScreen--playlistSelected &
+    {
+      @content;
+    }
+  } @else
+  {
+    &.PlaylistsScreen--playlistSelected
+    {
+      @content;
+    }
+  }
+}
+
+$playlistFilterSectionWidth: 440px;

@@ -99,6 +99,34 @@
 
 }
 
+@keyframes DriftingAround
+{
+  0%
+  {
+    transform: translate(8px, 8px);
+  }
+  33%
+  {
+    transform: translate(8px, -8px);
+  }
+  66%
+  {
+    transform: translate(-8px, 0);
+  }
+  100%
+  {
+    transform: translate(8px, 8px);
+  }
+}
+
+@keyframes DriftingAroundPaused
+{
+  to
+  {
+    transform: translate(0, 0);
+  }
+}
+
 @mixin searchButton
 {
   @include resetButton;
@@ -122,11 +150,10 @@
     right:          0;
     bottom:         0;
     border-radius:  60px;
-    padding:        24px 50px;
+    padding:        24px 50px 24px 100px;
     border:         2px solid $color-action;
     background:     none;
     letter-spacing: 1px;
-    text-transform: uppercase;
     color:          $color-action;
 
     @include placeholder
@@ -161,6 +188,7 @@
     transition:       transform 500ms ease, background 500ms ease;
     box-shadow:       1px 1px 7px rgba(59, 160, 232, 0.05);
     pointer-events:   none;
+    animation:        DriftingAround 15000ms ease infinite;
   }
 
   &:hover
@@ -195,6 +223,7 @@
   {
     background-color: #f3e5f9;
     transform:        translate(0, 0);
+    animation:        DriftingAroundPaused 5000ms ease forwards;
   }
 
 }

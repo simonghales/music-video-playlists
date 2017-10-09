@@ -1,0 +1,36 @@
+@mixin playlistPreviewBase
+{
+  display: flex;
+}
+
+@mixin playlistPreviewThumb
+{
+  width:            80px;
+  height:           80px;
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor:           pointer;
+  border-radius:    2px;
+}
+
+@mixin playlistPreviewInfo
+{
+  padding:         0 10px;
+  display:         flex;
+  flex-direction:  column;
+  justify-content: center;
+  cursor:          pointer;
+}
+
+@mixin playlistPreviewName
+{
+  font-size:      24px;
+  font-weight:    700;
+  letter-spacing: 0.25px;
+}
+
+@mixin playlistPreviewDetails
+{
+  font-size:   14px;
+  line-height: 15px;
+  margin-top:  10px;
+}
