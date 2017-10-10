@@ -1,3 +1,5 @@
+@import "../../styles/groups/landing";
+
 .Infographic
 {
   display:         flex;
@@ -9,15 +11,30 @@
 
 .Infographic__side
 {
+  transition: transform 750ms ease, opacity 750ms ease;
 
   &:first-of-type
   {
     padding-bottom: 150px;
+
+    @include landingScreenWillBeLeaving
+    {
+      transform: translateX(-100px);
+      opacity:   0;
+    }
+
   }
 
   &:last-of-type
   {
     padding-top: 150px;
+
+    @include landingScreenWillBeLeaving
+    {
+      transform: translateX(100px);
+      opacity:   0;
+    }
+
   }
 
 }

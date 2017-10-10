@@ -1,5 +1,21 @@
 @import "../../styles/tools/buttons";
 @import "../../styles/tools/typography";
+@import "../../styles/groups/landing";
+
+@keyframes FadeOutTitle
+{
+  0%
+  {
+
+  }
+  100%
+  {
+    //transform: translate(0, 0) scale(0.95);
+    transform:   translateY(-10px);
+    opacity:     0;
+    text-shadow: 5px 35px white, 5px 35px 2px rgba(59, 160, 232, 0.15);
+  }
+}
 
 .LandingScreen
 {
@@ -19,6 +35,12 @@
 {
   @include largeHeading;
   text-align: center;
+
+  @include landingScreenWillBeLeaving
+  {
+    animation: FadeOutTitle 750ms 100ms ease-out forwards;
+  }
+
 }
 
 .LandingScreen__actionWrapper
@@ -30,6 +52,19 @@
 .LandingScreen__action
 {
   @include actionButton;
+  transition: transform 1000ms ease, opacity 500ms ease;
+
+  @include landingScreenWillBeLeaving
+  {
+    transform: translateY(-150px);
+  }
+
+  @include landingScreenIsLeavingNow
+  {
+    transform: translateY(-175px);
+    opacity:   0;
+  }
+
 }
 
 .LandingScreen__action__text

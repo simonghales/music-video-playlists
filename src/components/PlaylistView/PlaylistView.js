@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './PlaylistView.css';
 import PlaylistsFilterSection from '../PlaylistsFilterSection/PlaylistsFilterSection';
+import TrackPreview from '../TrackPreview/TrackPreview';
 
 class PlaylistView extends Component {
 
@@ -21,13 +22,27 @@ class PlaylistView extends Component {
             </a>
           </div>
         </header>
-        <div>
-          <div>
-            Title Artist Album Added Length
-          </div>
-          <div>
-
-          </div>
+        <div className='PlaylistView__tracks'>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
+          <TrackPreview/>
         </div>
       </div>
     );

@@ -4,13 +4,16 @@
 
 .PlaylistView
 {
-  transition: opacity 750ms ease;
+  transition: opacity 750ms ease, visibility 0s linear 750ms;
   opacity:    0;
   height:     100%;
+  visibility: hidden;
 
   @include playlistScreenPlaylistSelected
   {
-    opacity: 1;
+    transition: opacity 750ms ease, visibility 0s linear 0s;
+    opacity:    1;
+    visibility: visible;
   }
 
 }
@@ -56,4 +59,32 @@
 .PlaylistView__details
 {
   @include playlistPreviewDetails;
+}
+
+.PlaylistView__tracks
+{
+
+}
+
+.PlaylistView__tracks__header
+{
+  display: flex;
+}
+
+.PlaylistView__tracks__header__title
+{
+  flex: 1;
+
+  &.PlaylistView__tracks__header__title--title
+  {
+    flex: 2;
+  }
+
+  &.PlaylistView__tracks__header__title--length
+  {
+    flex:       initial;
+    width:      80px;
+    text-align: right;
+  }
+
 }

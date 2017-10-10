@@ -1,0 +1,19 @@
+@mixin landingScreenIsLeavingNow
+{
+
+  .LandingScreen--isLeavingNow &
+  {
+    @content;
+  }
+
+}
+
+@mixin landingScreenWillBeLeaving
+{
+
+  .LandingScreen--willBeLeaving &
+  {
+    @content;
+  }
+
+}

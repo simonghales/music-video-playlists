@@ -18,7 +18,8 @@
 .PlaylistPreview__thumb
 {
   @include playlistPreviewThumb;
-  transition:       transform 400ms ease;
+  cursor:     pointer;
+  transition: transform 400ms ease;
 
   .PlaylistPreview:hover &
   {
@@ -30,7 +31,7 @@
 .PlaylistPreview__info
 {
   @include playlistPreviewInfo;
-  transition:      transform 400ms ease;
+  transition: transform 400ms ease;
 
   .PlaylistPreview:hover &
   {
